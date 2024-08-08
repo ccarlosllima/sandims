@@ -1,0 +1,193 @@
+body {
+    font-family: Poppins;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #fff;
+    color: white;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 136px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-left: 95px;
+    padding-right: 95px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+nav img {
+    width: 9rem;
+    height: 6rem;
+
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    display: flex;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-family: Roboto;
+    font-style: italic;
+    color: #011116;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+section {
+    padding: 50px;
+    text-align: center;
+}
+
+#home {
+    display: flex;
+    background: url('img/SL.123119.26540.04.jpg') no-repeat center center/cover;
+    overflow: hidden;
+    color: white;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #053780;
+}
+
+#home h1 {
+    padding-bottom: 120px;
+}
+
+
+.box-curso {
+    /* border: 1px springgreen solid; */
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    height: 400px;
+    gap: 20px;
+    flex-direction: row;
+}
+
+.box-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url(img/box-capa.jpg);
+    background-color: lightgrey;
+    border-radius: 20px;
+}
+
+.box-item img {
+    width: 150px;
+    height: 150px;
+    width: 20vh;
+    border: 1px solid lightgoldenrodyellow;
+    border-radius: 10px;
+}
+
+.box-item h2 {
+    margin-top: 10px;
+    color: #fff;
+}
+
+.box-item p {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 20px;
+    color: #fff;
+    font-family: Roboto;
+    font-weight: 300;
+}
+
+#about {
+    background: url('img/box-capa.jpg') no-repeat center center/cover;
+    color: #fff;
+}
+
+.cta {
+    background-color: #ff5733;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.cta:hover {
+    background-color: #c70039;
+    text-decoration: none;
+    color: #011116;
+}
+
+ul {
+    text-align: left;
+    display: inline-block;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    section {
+        padding: 30px 20px;
+    }
+}
+
+.carousel-item {
+    background-color: #333;
+    height: 300px;
+    width: 100%;
+}
+
+.text-overlay {
+    color: #ADD8E6;
+    font-size: 2em;
+    font-weight: 100;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.text-overlay-p {
+    font-family: Roboto;
+    font-style: italic;
+    color: #ADD8E6;
+    font-size: 1.2em;
+    font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
