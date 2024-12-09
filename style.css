@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Poppins;
     margin: 0;
@@ -5,54 +11,59 @@ body {
     box-sizing: border-box;
 }
 
-header {
-    background-color: #fff;
-    color: white;
-    padding: 10px 0;
-    position: sticky;
-    top: 0;
+.capa {
+    display: flex;
+    flex-direction: row;
     width: 100%;
-    height: 136px;
-    padding-top: 0;
-    padding-bottom: 0;
+    height: 130px;
+}
+
+.logo img {
+    max-width: 150px;
+    max-height: 150px;
 }
 
 nav {
     display: flex;
     align-items: center;
     width: 100%;
-    height: 100%;
-    padding-left: 95px;
-    padding-right: 95px;
-    flex-direction: row;
     justify-content: space-between;
 }
 
-nav img {
-    width: 9rem;
-    height: 6rem;
-
-}
-
 nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    height: 40px;
     display: flex;
+    gap: 30px;
 }
 
 nav ul li {
     display: flex;
-    margin: 0 15px;
 }
 
 nav ul li a {
-    font-family: Roboto;
-    font-style: italic;
-    color: #011116;
-    text-decoration: none;
-    font-weight: bold;
+    color: #ffffff;
     font-size: 1.3rem;
+    font-family: Roboto;
+    font-weight: 900;
+    font-style: italic;
+    text-decoration: none;
+    font-size: 1.3rem;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: "";
+    width: 0%;
+    height: 3px;
+    background-color: #eef1f3;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: .5s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 section {
@@ -61,66 +72,327 @@ section {
 }
 
 #home {
+    position: relative;
     display: flex;
-    background: url('img/SL.123119.26540.04.jpg') no-repeat center center/cover;
-    overflow: hidden;
+    flex-direction: column;
+    background: url('img/capa2.png') no-repeat center center/cover;
     color: white;
     height: 100vh;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-color: #053780;
+
 }
 
-#home h1 {
-    padding-bottom: 120px;
+#home .bem-vindo {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+#home .bem-vindo:hover {
+    background-color: #01172548;
+    scale: 1.1;
+    transition: 3s;
+    width: 80%;
+    text-align: center;
+    border-radius: 15px;
+}
+
+
+#home .bem-vindo h1 {
+    color: white;
+    text-align: center;
+    animation: fadeInUp 2s ease-in-out;
+    font-size: 2.3rem;
+    font-weight: 100;
+}
+
+#home .text-bem-vindo p {
+    margin-top: 50px;
+    animation: fadeSlideUp 3s ease-in-out;
+    font-weight: 500;
+    color: #dad8d5;
+    font-size: 1.6rem;
+}
+
+/* Animações*/
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+#courses {
+    flex-direction: row;
+    width: 100%;
+}
 
 .box-curso {
-    /* border: 1px springgreen solid; */
+    padding: 300px;
     display: flex;
-    justify-content: space-between;
-    width: auto;
-    height: 400px;
+    flex-wrap: wrap;
+    padding: 20px;
     gap: 20px;
-    flex-direction: row;
+    justify-content: center;
+    height: auto;
+
 }
 
 .box-item {
+    padding: 15px;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    width: 20vw;
     align-items: center;
-    background: url(img/box-capa.jpg);
-    background-color: lightgrey;
+    background-color: #011725;
     border-radius: 20px;
+    border: #fff solid 1px;
+    position: relative;
+}
+
+.box-item:hover {
+    scale: 1.1;
+    transition: 1s;
+
 }
 
 .box-item img {
-    width: 150px;
-    height: 150px;
-    width: 20vh;
+    max-width: 100%;
+    margin-top: 7px;
     border: 1px solid lightgoldenrodyellow;
     border-radius: 10px;
 }
 
 .box-item h2 {
-    margin-top: 10px;
+    font-size: 1rem;
     color: #fff;
+}
+
+.content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+.content a {
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .box-item p {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 20px;
     color: #fff;
     font-family: Roboto;
-    font-weight: 300;
+    font-weight: 400;
+    font-size: .9rem;
+    text-align: justify;
+    margin-bottom: 30px;
 }
 
-#about {
-    background: url('img/box-capa.jpg') no-repeat center center/cover;
+
+.box-item button {
+    position: absolute;
+    background-color: #ff5733;
+    color: white;
+    padding: 5px 5px;
+    text-decoration: none;
+    border: none;
+    width: 80%;
+    border-radius: 5px;
+    bottom: 10px;
+}
+
+
+/* Modal com Formulário para contato */
+/* Estilos gerais para o modal */
+.modal {
+    display: none;
+    /* Oculta o modal por padrão */
+    position: fixed;
+    z-index: 1;
+    /* Garante que o modal fique acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Largura total da tela */
+    height: 100%;
+    /* Altura total da tela */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fundo escuro semitransparente */
+}
+
+/* Estilos para o conteúdo do modal */
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    /* Centraliza vertical e horizontalmente */
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    /* Largura do conteúdo */
+    max-width: 500px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    /* Sombra para destacar o modal */
+}
+
+/* Estilos para o botão de fechar */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Fim Modal de com formulário para contato */
+/* estilizacao para formulario */
+.modal-content h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+form label {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    text-align: center;
+}
+
+form input {
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border-width: 1.2px;
+}
+
+select {
+    margin-bottom: 10px;
+    height: 35px;
+}
+
+#button_modal {
+    height: 35px;
+    outline: none;
+    background-color: #ff5733;
+    color: white;
+    border-radius: 5px;
+    border-width: 1.2px;
     color: #fff;
+    font-size: 1.2rem;
+
+}
+
+/* fim estilizacao para formulario */
+
+#about {
+    background: url('img/SL.123119.26540.04.jpg') no-repeat center center/cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.animete {
+    align-self: center;
+    font-size: 2rem;
+    border-right: 5px solid #fff;
+    white-space: nowrap;
+    width: 0;
+    overflow: hidden;
+    animation: make 10s step-end infinite, anima 10s steps(30, end) infinite
+}
+
+@keyframes make {
+    50% {
+        border-right-color: transparent;
+    }
+}
+
+@keyframes anima {
+    20% {
+        width: 39ch;
+    }
+
+    70% {
+        width: 39ch;
+    }
+
+    85% {
+        width: 0;
+    }
+
+    100% {
+        width: 0;
+    }
+}
+
+.missao {
+    align-self: flex-start;
+    width: 50%;
+    text-align: justify;
+    animation: fadeInUp 3s ease-in-out;
+
+}
+
+#about h3 {
+    animation: fadeSlideUp 3s ease-in-out;
+    text-align: center;
+}
+
+.visao {
+    align-self: flex-end;
+    width: 50%;
+    text-align: justify;
+    animation: fadeInUp 3s ease-in-out;
+
+}
+
+.valores {
+    align-self: start;
+    width: 50%;
+    text-align: justify;
+    animation: fadeInUp 3s ease-in-out;
+
+}
+
+
+#contact {
+    display: flex;
+    flex-direction: column;
 }
 
 .cta {
@@ -128,6 +400,7 @@ section {
     color: white;
     padding: 10px 20px;
     text-decoration: none;
+    border: none;
     border-radius: 5px;
     margin-top: 20px;
 }
@@ -135,6 +408,7 @@ section {
 .cta:hover {
     background-color: #c70039;
     text-decoration: none;
+    border: none;
     color: #011116;
 }
 
@@ -148,46 +422,230 @@ li {
     margin-bottom: 10px;
 }
 
+/* Redes Sociais */
+
+.redes_sociais {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    height: 50px;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.redes_sociais #face {
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.redes_sociais #face:hover {
+    scale: 1.2;
+    transition: 1s;
+}
+
+.redes_sociais #insta {
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.redes_sociais #insta:hover {
+    scale: 1.2;
+    transition: 1s;
+}
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.whatsapp-icon img {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.whatsapp-icon img:hover {
+    scale: 1.2;
+    transition: 1s;
+
+}
+
+
+.contact_escola {
+    width: 25%;
+    margin: auto;
+    text-align: center;
+}
+
+p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
 
 footer {
-    background-color: #333;
+    background: url(img/box-capa.jpg);
     color: white;
     text-align: center;
     padding: 20px 0;
 }
 
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
-    nav ul {
+    #home {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .capa {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        background-color: #fff;
+    }
+
+    .capa nav {
+        /* display: none; */
+        background-color: #c70039;
+    }
+
+    .bem-vindo {
+        margin-top: 10px;
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        width: 80%;
+        height: 100vh;
     }
 
-    nav ul li {
-        margin: 10px 0;
+
+    #home .bem-vindo h1 {
+        color: white;
+        text-align: center;
+        font-size: 2.3rem;
+        font-weight: 100;
     }
 
-    section {
-        padding: 30px 20px;
+    #home .text-bem-vindo p {
+        margin-top: 10px;
+        color: #dad8d5;
+        font-weight: 500;
+        font-size: 1rem;
+        text-align: justify;
+        background-color: #01172548;
+        padding: 15px;
+        border-radius: 14px;
     }
-}
 
-.carousel-item {
-    background-color: #333;
-    height: 300px;
-    width: 100%;
-}
+    #courses {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.text-overlay {
-    color: #ADD8E6;
-    font-size: 2em;
-    font-weight: 100;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
+    .box-curso {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+    }
 
-.text-overlay-p {
-    font-family: Roboto;
-    font-style: italic;
-    color: #ADD8E6;
-    font-size: 1.2em;
-    font-weight: 400;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    .box-item {
+        display: flex;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: #011725;
+        border-radius: 20px;
+        border: #fff solid 1px;
+        position: relative;
+    }
+
+    .box-item button {
+        position: absolute;
+        background-color: #ff5733;
+        color: white;
+        width: 80%;
+        padding: 5px 5px;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        bottom: 8px;
+    }
+
+
+    #about h3 {
+        font-size: 2rem;
+        animation: fadeSlideUp 3s ease-in-out;
+        text-align: center;
+    }
+
+    .missao {
+        animation: none;
+        width: 100%;
+        animation: fadeInUp 3s ease-in-out;
+    }
+
+
+    .visao {
+        animation: none;
+        animation: fadeInUp 3s ease-in-out;
+        width: 100%;
+
+    }
+
+    .valores {
+        animation: none;
+        animation: fadeInUp 3s ease-in-out;
+        width: 100%;
+
+    }
+
+    .animete {
+        font-size: 2rem;
+        border-right: 5px solid #fff;
+        white-space: nowrap;
+        width: 0;
+        overflow: hidden;
+        animation: none;
+        animation: make 10s step-end infinite, anima 10s steps(30, end) infinite
+    }
+
+    #contact {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin-bottom: 15px;
+    }
+
+    .contact_escola {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .contact_escola p {
+        height: auto;
+        width: 100%;
+        font-weight: bold;
+        align-self: center;
+        font-size: 1rem;
+    }
+
+    .cta {
+        background-color: #ff5733;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        align-self: center;
+        border: none;
+        border-radius: 5px;
+        margin-top: 20px;
+        width: 70%;
+    }
 }

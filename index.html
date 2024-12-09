@@ -4,150 +4,307 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- inicio google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-    <!-- fim -->
     <link rel="stylesheet" href="style.css">
     <title>Sandim's</title>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <img src="img/logo2.png" alt="logo">
-            <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#about">Sobre Nós</a></li>
-                <li><a href="#courses">Cursos</a></li>
-                <li><a href="#resources">Eventos</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
-        </nav>
-
-    </header>
     <section id="home">
-        <h1 class="text-overlay ">Bem-vindo à Escola de Música Sandim's!</h1>
-        <p class="text-overlay-p ">Descubra a paixão pela música em um ambiente acolhedor e inspirador. Na Escola de
-            Música Sandim's,
-            acreditamos que a música é uma linguagem universal que une corações e mentes. Se você sempre sonhou em tocar
-            um instrumento, cantar ou simplesmente explorar o mundo musical, este é o lugar perfeito para você.</p>
+        <div class="capa">
+            <div class="logo">
+                <a href="#home">
+                    <img src="img/logo2.png" alt="logo">
+                </a>
+            </div>
+            <div class="icon">
+                <i class="fa-light fa-bars"></i>
+            </div>
+            <nav>
+                <a href="#home"></a>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#courses">Cursos</a></li>
+                    <li><a href="#resources">Eventos</a></li>
+                    <li><a href="#about">Sobre Nós</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+
+            </nav>
+        </div>
+
+        <div class="bem-vindo">
+            <h1>Bem-vindo à Escola de Música Sandim's!</h1>
+            <div class="text-bem-vindo">
+                <p>Descubra a paixão pela música em um ambiente acolhedor e inspirador. Na
+                    Escola de
+                    Música Sandim's,
+                    acreditamos que a música é uma linguagem universal que une corações e mentes. Se você sempre
+                    sonhou
+                    em
+                    tocar
+                    um instrumento, cantar ou simplesmente explorar o mundo musical, este é o lugar perfeito para
+                    você.
+                </p>
+            </div>
+        </div>
     </section>
 
+    <!-- INICIO MODAL -->
+    <!-- Botão que abre o modal -->
+    <!-- Estrutura do modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span> <!-- Botão para fechar o modal -->
+            <h2>Formulário para contato</h2>
+            <form action="" method="post">
+                <label for="">Informe seu nome</label>
+                <input type="text">
+                <label for="">Informe seu telefone para contato</label>
+                <input type="tel">
+                <label for="cursos">---Selecione o Curso---</label>
+                <select name="curso" id="curso">
+                    <option value="bateria">Bateria</option>
+                    <option value="ukulele">Ukulele</option>
+                    <option value="guitarra">Guitarra</option>
+                    <option value="contrabaixo">Contrabaixo</option>
+                    <option value="canto">Canto</option>
+                    <option value="violao">Violão</option>
+                    <option value="piano">Piano</option>
+                </select>
+                <button id="button_modal">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <!--FIM MODAL -->
+
     <section id="courses">
-        <h1>Cursos</h1>
+        <h1>Confira nossos cursos</h1>
         <div class="box-curso">
             <div class="box-item">
                 <h2>Bateria</h2>
                 <img src="img/bateria.jpg" alt="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolorem rerum laudantium cum
-                    corrupti ut.</p>
-                <a href="" class="cta">Inscreva-se</a>
+                <div class="content">
+                    <p>Aprenda a tocar bateria com aulas práticas focadas em técnicas, ritmos e estilos musicais.
+                        <span class="more-text" style="display: none;">
+                            Venha desenvolver suas habilidades e tocar suas músicas
+                            favoritas!
+                        </span>
+                        <br>
+                        <a class="btn_expande" style="color: red;">Ler mais ..</a>
+                    </p>
+                </div>
+                <button onclick="openModal()">Inscreva-se</button>
+            </div>
+
+            <div class="box-item">
+                <h2>Guitarra</h2>
+                <img src="img/guitarra.png" alt="">
+                <div class="content">
+                    <p>Aprenda a tocar guitarra em um curso para prático que cobre
+                        acordes, técnicas de palhetada
+                        <span class="more-text" style="display: none;">
+                            e improvisação. Você tocará suas músicas favoritas rapidamente!
+                        </span>
+                        <br>
+                        <a class="btn_expande" style="color: red;">Ler mais ...</a>
+                    </p>
+                </div>
+                <button onclick="openModal()">Inscreva-se</button>
+
+            </div>
+            <div class="box-item">
+                <h2>Contrabaixo</h2>
+                <img src="img/baixo.png" alt="">
+                <div class="content">
+                    <p>Aprenda a tocar contrabaixo em nosso curso! Você irá explorar técnicas, escalas e grooves
+                        <span class="more-text" style="display: none;">
+                            tudo em um ambiente prático e estimulante.
+                        </span>
+                        <br>
+                        <a class="btn_expande" style="color: red;">Ler mais ...</a>
+
+                    </p>
+                </div>
+                <button onclick="openModal()">Inscreva-se</button>
 
             </div>
 
             <div class="box-item">
                 <h2>Canto</h2>
-                <img src="img/cantando.jpg" alt="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolorem rerum laudantium cum
-                    corrupti ut.</p>
-                <a href="" class="cta">Inscreva-se</a>
+                <img src="img/cantandoo.jpg" alt="">
+                <div class="content">
+                    <p>Aprenda técnicas vocais, controle de respiração e
+                        interpretação musical. Nossos instrutores oferecem
+                        <span class="more-text" style="display: none;">
+                            orientação personalizada para ajudar você a aprimorar sua habilidade e confiança ao cantar
+                            suas
+                            músicas favoritas.
+                        </span>
+                        <br>
+                        <a class="btn_expande" style="color: red;">Ler mais ...</a>
+                    </p>
+                </div>
+
+                <button onclick="openModal()">Inscreva-se</button>
 
             </div>
-
             <div class="box-item">
                 <h2>Violão</h2>
-                <img src="img/violao.jpg" alt="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolorem rerum laudantium cum
-                    corrupti ut.</p>
-                <a href="" class="cta">Inscreva-se</a>
+                <img src="img/violao.png" alt="">
+                <div class="content">
+                    <p>No curso de Violão você aprenderá acordes, técnicas de
+                        dedilhado e ritmos
+                        variados.
+                        <span class="more-text" style="display: none;">
+                            Nossos instrutores oferecem feedback individualizado
+                            para que você possa tocar suas músicas favoritas com confiança e estilo.
+                        </span>
+                        <br>
+                        <a class="btn_expande" style="color: red;">Ler mais ...</a>
+                    </p>
+                </div>
+                <button onclick="openModal()">Inscreva-se</button>
             </div>
 
             <div class="box-item">
                 <h2>Piano</h2>
-                <img src="img/capa.jpg  " alt="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolorem rerum laudantium cum
-                    corrupti ut.</p>
-                <a href="" class="cta">Inscreva-se</a>
+                <img src="img/painoo.png" alt="">
+                <div class="content">
+                    <p>Descubra a arte de tocar piano com aulas que exploram acordes,
+                        melodias e ritmos.
+                        <span class="more-text" style="display: none;">
+                            Aqui você terá a oportunidade de praticar e expressar sua musicalidade,
+                            tocando suas canções preferidas de forma rápida e divertida!
+                        </span>
+                        <br>
+                        <a class="btn_expande" style="color: red;">Ler mais ...</a>
+                    </p>
+                </div>
+                <button onclick="openModal()">Inscreva-se</button>
+            </div>
+
+            <div class="box-item">
+                <h2>Musiclização Infantil</h2>
+                <img src="img/ukulele.jpg" alt="ukulele">
+                <div class="content">
+                    <p>Descubra a arte de tocar piano com aulas que exploram acordes,
+                        melodias e ritmos.
+                        <span class="more-text" style="display: none;">
+                            Aqui você terá a oportunidade de praticar e expressar sua musicalidade,
+                            tocando suas canções preferidas de forma rápida e divertida!
+                        </span>
+                        <br>
+                        <a class="btn_expande" style="color: red;">Ler mais ...</a>
+                    </p>
+                </div>
+                <button onclick="openModal()">Inscreva-se</button>
             </div>
         </div>
 
     </section>
 
     <section id="about">
-        <h2>Por que escolher a Escola de Música Sandim's?</h2>
-        <h3>Missão</h3>
+        <h2 class="animete">Por que escolher a Escola de Música Sandim's?</h2>
 
-        <p> Nossa missão é transformar a paixão pela música em uma jornada de aprendizado inspiradora e acessível para
-            todos. Na Escola de Música Harmonia, acreditamos que a música é uma linguagem universal que conecta pessoas
-            e
-            culturas. Nos dedicamos a fornecer uma educação musical de alta qualidade,
-            através de métodos inovadores e uma equipe de professores qualificados, para ajudar nossos alunos a alcançar
-            seu
-            pleno potencial artístico.
-        </p>
-        <h3>Visão</h3>
+        <div class="missao">
+            <h3>Missão</h3>
+            <div>
+                <p> Nossa missão é transformar a paixão pela música em uma jornada de aprendizado inspiradora e
+                    acessível
+                    para
+                    todos. Aqui, acreditamos que a música é uma linguagem universal que conecta pessoas e
+                    culturas. Nos dedicamos a fornecer uma educação musical de alta qualidade,
+                    através de métodos inovadores e uma equipe de professores qualificados, para ajudar nossos alunos a
+                    alcançar
+                    seu pleno potencial artístico.
+                </p>
+            </div>
 
-        <p>Ser a principal referência em educação musical na região, reconhecida pela excelência de nossos cursos e pela
-            transformação positiva na vida de nossos alunos. Visamos criar uma comunidade vibrante de músicos de todas
-            as
-            idades e níveis de habilidade,
-            promovendo o amor pela música e o desenvolvimento contínuo das habilidades musicais, para que cada aluno
-            possa
-            expressar sua individualidade e talento.
-        </p>
+        </div>
 
-        <h3>Valores</h3>
+        <div class="visao">
+            <h3>Visão</h3>
+            <div class="right">
+                <p> Ser a principal referência em educação musical na região, reconhecida pela excelência de nossos
+                    cursos e
+                    pela
+                    transformação positiva na vida de nossos alunos. Visamos criar uma comunidade vibrante de músicos de
+                    todas
+                    as
+                    idades e níveis de habilidade,
+                    promovendo o amor pela música e o desenvolvimento contínuo das habilidades musicais, para que cada
+                    aluno
+                    possa expressar sua individualidade e talento.
+                </p>
+            </div>
+        </div>
 
-        <p><strong>Excelência:</strong> Comprometemo-nos a oferecer a mais alta qualidade de ensino musical, com uma
-            equipe de
-            profissionais dedicados e recursos de ponta.
-        </p>
-        <p><strong>Inclusão:</strong> Valorizamos a diversidade e acreditamos que a música é para todos,
-            independentemente de idade,
-            origem ou nível de habilidade.
-        </p>
-        <p><strong>Inovação:</strong> Buscamos constantemente novas metodologias e tecnologias para tornar o aprendizado
-            da música mais
-            eficaz e envolvente.
-        </p>
-        <p><strong>Paixão:</strong> Nossa paixão pela música nos motiva a inspirar e nutrir a paixão em nossos alunos,
-            incentivando-os a
-            explorar e crescer musicalmente.
-            Comunidade: Promovemos um ambiente acolhedor e solidário, onde alunos, pais e professores se sentem parte de
-            uma família musical.
-        </p>
+        <div class="valores">
+            <h3>Valores</h3>
+            <div>
+                <p><strong>Excelência:</strong> Comprometemo-nos a oferecer a mais alta qualidade de ensino musical, com
+                    uma
+                    equipe de profissionais dedicados e recursos de ponta.
+                </p>
+                <p><strong>Inclusão:</strong> Valorizamos a diversidade e acreditamos que a música é para todos,
+                    independentemente de idade, origem ou nível de habilidade.
+                </p>
+                <p><strong>Inovação:</strong> Buscamos constantemente novas metodologias e tecnologias para tornar o
+                    aprendizado
+                    da música mais eficaz e envolvente.
+                </p>
+                <p><strong>Paixão:</strong> Nossa paixão pela música nos motiva a inspirar e nutrir a paixão em nossos
+                    alunos,
+                    incentivando-os a explorar e crescer musicalmente.
+                </p>
+            </div>
+        </div>
     </section>
 
-
-
     <section id="contact">
-        <h2>Entre em Contato</h2>
-        <p>Telefone: (XX) XXXX-XXXX</p>
-        <p>Email: contato@escolaSandims.com</p>
-        <p>Endereço: Rua da Música, 123, Centro</p>
-        <a href="#inscricao" class="cta">Inscreva-se Agora!</a>
+        <h2>Contato</h2>
+        <div class="contact_escola">
+            <p>Fone: (91) 99352-4071</p>
+            <p>Email: sandimsescolademusica@gmail.com</p>
+            <p>Endereço: Rua da Música, 123, Centro</p>
+        </div>
+        <div class="redes_sociais">
+            <a href=""><img src="img/icons/face.svg" alt="" id="face"></a>
+            <a href=""><img src="img/icons/insta.svg" alt="" id="insta"></a>
+        </div>
+        <a href="https://wa.me/+5591993524071" target="_blank" class="whatsapp-icon">
+            <img src="img/icons/social.png" alt="WhatsApp">
+        </a>
+
+        <button class="cta" onclick="openModal()">Inscreva-se</button>
     </section>
 
     <footer>
-        <p>&copy; 2024 Escola de Música Sandim's. Todos os direitos reservados.</p>
+        <p>&copy;2024 Escola de Música Sandim's. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="scripts.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+</body>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>
+
+
+<script>
+    document.querySelectorAll('.btn_expande').forEach(button => {
+        button.addEventListener('click', () => {
+            const box = button.parentElement;
+            const moreText = box.querySelector('.more-text');
+            const isVisible = moreText.style.display === 'inline';
+
+            moreText.style.display = isVisible ? 'none' : 'inline';
+            button.textContent = isVisible ? 'Ver mais' : 'Ver menos';
+        });
+    });
+
+</script>
+<script src="js/main.js"></script>
 </body>
 
 </html>
