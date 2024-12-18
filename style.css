@@ -77,6 +77,7 @@ section {
     flex-direction: column;
     background: url('img/capa2.png') no-repeat center center/cover;
     color: white;
+    width: 100%;
     height: 100vh;
     align-items: center;
 
@@ -167,7 +168,7 @@ section {
     background-color: #011725;
     border-radius: 20px;
     border: #fff solid 1px;
-    position: relative;
+    /* position: relative; */
 }
 
 .box-item:hover {
@@ -211,7 +212,6 @@ section {
 
 
 .box-item button {
-    position: absolute;
     background-color: #ff5733;
     color: white;
     padding: 5px 5px;
@@ -321,6 +321,7 @@ select {
     background: url('img/SL.123119.26540.04.jpg') no-repeat center center/cover;
     color: #fff;
     display: flex;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
@@ -391,6 +392,7 @@ select {
 
 
 #contact {
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -495,6 +497,7 @@ footer {
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
     #home {
+        width: 100%;
         display: flex;
         align-items: center;
         margin: 0;
@@ -502,43 +505,70 @@ footer {
     }
 
     .capa {
+        position: fixed;
         display: flex;
-        width: 100%;
         justify-content: space-between;
         background-color: #fff;
+        height: auto;
+    }
+
+    .logo::before {
+        content: '';
+        background: url('img/icons/cardapio.png') no-repeat;
+        position: absolute;
+        right: 0;
+        bottom: 10px;
+        height: 55px;
+        width: 55px;
     }
 
     .capa nav {
-        display: none;
-        background-color: #c70039;
-    }
-
-    .bem-vindo {
-        margin-top: 10px;
+        position: absolute;
         display: flex;
+        width: auto;
+        right: -160px;
+        margin-top: 110px;
+    }
+
+    .capa nav ul {
+        padding: 20px;
         flex-direction: column;
+    }
+
+    .list {
+        border-bottom-left-radius: 20px;
+        background-color: black;
+        width: 100%;
+        height: 100%;
+    }
+
+    .header-content {
+        display: flex;
+        justify-content: center;
         align-items: center;
-        width: 80%;
-        height: 100vh;
+        background-color: #27111741;
+        width: 100%;
+        height: 100%;
     }
 
 
-    #home .bem-vindo h1 {
-        color: white;
-        text-align: center;
-        font-size: 2.3rem;
-        font-weight: 100;
+    #home .bem-vindo:hover {
+        background-color: transparent;
+        scale:1;
+        transition: 0;
+        width: auto;
+        text-align: justify;
+        border-radius: none;
     }
 
-    #home .text-bem-vindo p {
-        margin-top: 10px;
+    #home .text-bem-vindo p {       
         color: #dad8d5;
         font-weight: 500;
         font-size: 1rem;
         text-align: justify;
-        background-color: #01172548;
+        background-color: transparent;
         padding: 15px;
-        border-radius: 14px;
+        border-radius: none;
     }
 
     #courses {
@@ -549,25 +579,22 @@ footer {
 
     .box-curso {
         display: flex;
+        align-items: center;
         flex-direction: column;
         width: 100vw;
     }
 
     .box-item {
-        display: flex;
         width: 100%;
         height: auto;
         flex-direction: column;
-        flex-wrap: wrap;
         align-items: center;
         background-color: #011725;
         border-radius: 20px;
         border: #fff solid 1px;
-        position: relative;
     }
 
     .box-item button {
-        position: absolute;
         background-color: #ff5733;
         color: white;
         width: 80%;
@@ -583,6 +610,10 @@ footer {
         font-size: 2rem;
         animation: fadeSlideUp 3s ease-in-out;
         text-align: center;
+    }
+
+    #about h2 {
+        display: none;
     }
 
     .missao {
